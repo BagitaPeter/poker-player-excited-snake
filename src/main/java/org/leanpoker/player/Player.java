@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "PlayerName";
+    static final String VERSION = "testplayer2";
 
     public static int betRequest(JsonElement request) {
         int bet = 0;
@@ -15,7 +15,7 @@ public class Player {
         jobject = jobject.getAsJsonObject("game_state");
 
         JsonArray jarray = jobject.getAsJsonArray("players");
-        jobject = jarray.get(0).getAsJsonObject();
+        jobject = jarray.get(1).getAsJsonObject();
 
         JsonArray jarray = jobject.getAsJsonArray("hole_cards");
         jobject = jarray.get(0).getAsJsonObject();
