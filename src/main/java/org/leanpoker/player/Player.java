@@ -6,12 +6,11 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "Default Java folding player";
+    static final String VERSION = "Dumb poker robot 1.0";
 
     public static int betRequest(JsonElement request) {
         int bet = 0;
-        JsonElement jelement = new JsonParser().parse(gameState);
-        JsonObject  jobject = jelement.getAsJsonObject();
+        JsonObject  jobject = request.getAsJsonObject();
         jobject = jobject.getAsJsonObject("game_state");
         JsonArray jarray = jobject.getAsJsonArray("hole_cards");
         jobject = jarray.get(0).getAsJsonObject();
