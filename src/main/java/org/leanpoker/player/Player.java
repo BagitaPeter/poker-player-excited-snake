@@ -20,9 +20,11 @@ public class Player {
         String result = jobject.get("suit").getAsString();
 
 
+
+
         if(result=="hearts"){
             bet = 10;
-        }return bet;
+        }return 0;
     }
 
     public static void showdown(JsonElement game) {
