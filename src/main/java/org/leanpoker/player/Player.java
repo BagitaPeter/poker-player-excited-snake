@@ -11,17 +11,20 @@ public class Player {
     public static int betRequest(JsonElement request) {
         int bet = 0;
 
-       /* JsonObject  jobject = request.getAsJsonObject();
+        JsonObject  jobject = request.getAsJsonObject();
         jobject = jobject.getAsJsonObject("game_state");
+
+        JsonArray jarray = jobject.getAsJsonArray("players");
+        jobject = jarray.get(0).getAsJsonObject();
+
         JsonArray jarray = jobject.getAsJsonArray("hole_cards");
         jobject = jarray.get(0).getAsJsonObject();
-        String result = jobject.get("suit").getAsString();*/
+        String result = jobject.get("suit").getAsString();
 
 
-       /* if(result=="hearts"){
-            bet = 11;
-        }return bet;*/
-        return 0;
+        if(result=="hearts"){
+            bet = 23;
+        }return bet;
     }
 
     public static void showdown(JsonElement game) {
