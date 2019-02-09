@@ -13,14 +13,13 @@ public class Player {
 
         JsonObject  jobject = request.getAsJsonObject();
         jobject = jobject.getAsJsonObject("game_state");
-
         JsonArray jarray = jobject.getAsJsonArray("players");
         jobject = jarray.get(1).getAsJsonObject();
 
         JsonArray jarray = jobject.getAsJsonArray("hole_cards");
         jobject = jarray.get(0).getAsJsonObject();
-        String result = jobject.get("suit").getAsString();
 
+        String result = jobject;
 
         if(result=="hearts"){
             bet = 23;
@@ -31,3 +30,5 @@ public class Player {
 
     }
 }
+
+
