@@ -12,14 +12,15 @@ public class Player {
         int bet = 0;
 
         JsonObject  jobject = request.getAsJsonObject();
-        jobject = jobject.getAsJsonObject("game_state");
-        JsonArray jarray = jobject.getAsJsonArray("players");
-        jobject = jarray.get(1).getAsJsonObject();
+        jobject1 = jobject.getAsJsonObject("game_state");
+        JsonArray jarray = jobject1.getAsJsonArray("players");
+        jobject2 = jarray.get(1).getAsJsonObject();
 
-        JsonArray jarray = jobject.getAsJsonArray("hole_cards");
-        jobject = jarray.get(0).getAsJsonObject();
+        JsonArray jarray1 = jobject2.getAsJsonArray("hole_cards");
+        jobject3 = jarray1.get(0).getAsJsonObject();
 
-        String result = jobject;
+        String result = jobject3;
+
 
         if(result=="hearts"){
             bet = 23;
