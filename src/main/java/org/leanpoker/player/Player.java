@@ -6,20 +6,20 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "Default Java folding player";
+    static final String VERSION = "PlayerName";
 
     public static int betRequest(JsonElement request) {
         int bet = 0;
-        JsonElement jelement = new JsonParser().parse(gameState);
-        JsonObject  jobject = jelement.getAsJsonObject();
+
+        JsonObject  jobject = request.getAsJsonObject();
         jobject = jobject.getAsJsonObject("game_state");
         JsonArray jarray = jobject.getAsJsonArray("hole_cards");
         jobject = jarray.get(0).getAsJsonObject();
-        String result = jobject.get("suits").getAsString();
+        String result = jobject.get("suit").getAsString();
 
 
         if(result=="hearts"){
-            bet = 10;
+            bet = 11;
         }return bet;
     }
 
